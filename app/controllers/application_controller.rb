@@ -60,7 +60,7 @@ class ApplicationController < ActionController::Base
     @avgDailyVolume_token0_chart = PortfolioSnapshot.where({ :created_at => (@start_date..@end_date) }).group_by_minute(:created_at).maximum(:avgDailyVolumeToken0)
     @activeTickLiq_chart = PortfolioSnapshot.where({ :created_at => (@start_date..@end_date) }).group_by_minute(:created_at).maximum(:ActiveTickLiquidityAmount0)
 
-    render({ :template => "main_interface/homepage.html.erb" })
+    render({ :template => "main_interface/homepage" })
   end
 
   def getFee
